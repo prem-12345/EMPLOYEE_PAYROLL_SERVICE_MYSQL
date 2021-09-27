@@ -20,3 +20,8 @@
  # "UC5 - RETRIEVE SALARY DATA FOR PARTICULAR EMPLOYEE"
  select salary from employee_payroll where name = 'KALPESH';
  select * from employee_payroll where start between cast('2017-06-01'as date)and date(now());
+
+ # "UC6 - ADD GENDER TO EMPLOYEE PAYROLL TABLE AND UPDATE TABLE"
+ alter table employee_payroll add GENDER char(1) NOT NULL after NAME;
+ update employee_payroll set GENDER = 'M' where NAME = 'PREM' or NAME = 'KALPESH' or NAME = 'RAHUL';
+ insert into employee_payroll(ID,NAME,GENDER,SALARY,START)values(4,'KAVITA','F',10000.00,'2019-06-01'),(5,'KALYANI','F',20000.00,'2019-06-01');

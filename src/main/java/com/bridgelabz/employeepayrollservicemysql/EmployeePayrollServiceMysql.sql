@@ -16,3 +16,7 @@
 
  # "UC4 - RETRIEVE ALL EMPLOYEE PAYROLL DATA"
  select * from employee_payroll;
+
+ # "UC5 - RETRIEVE SALARY DATA FOR PARTICULAR EMPLOYEE"
+ select salary from employee_payroll where name = 'KALPESH';
+ select * from employee_payroll where start between cast('2017-06-01'as date)and date(now());

@@ -32,3 +32,26 @@
  select min(SALARY)from employee_payroll where GENDER = 'F'group by GENDER;
  select max(SALARY)from employee_payroll where GENDER = 'F'group by GENDER;
  select GENDER, COUNT(NAME) from employee_payroll group by GENDER;
+
+ # "UC8 - EXTEND EMPLOYEE PAYROLL DATA TO ADD EMPLOYEE PHONE,ADDRESS,DEPARTMENT"
+ alter table employee_payroll add PHONE_NUMBER int NOT NULL after GENDER;
+ alter table employee_payroll add ADDRESS varchar(150) after PHONE_NUMBER;
+ alter table employee_payroll add DEPARTMENT varchar(50) NOT NULL after ADDRESS;
+
+ update employee_payroll set PHONE_NUMBER = 73875576 where NAME = 'PREM';
+ update employee_payroll set PHONE_NUMBER = 85236955 where NAME = 'KALPESH';
+ update employee_payroll set PHONE_NUMBER = 89632555 where NAME = 'RAHUL';
+ update employee_payroll set PHONE_NUMBER = 96325558 where NAME = 'KAVITA';
+ update employee_payroll set PHONE_NUMBER = 96325258 where NAME = 'KALYANI';
+
+ update employee_payroll set ADDRESS = 'NASHIK' where NAME = 'PREM';
+ update employee_payroll set ADDRESS = 'NASHIK' where NAME = 'KALPESH';
+ update employee_payroll set ADDRESS = 'NASHIK' where NAME = 'RAHUL';
+ update employee_payroll set ADDRESS = 'NASHIK' where NAME = 'KAVITA';
+ update employee_payroll set ADDRESS = 'NASHIK' where NAME = 'KALYANI';
+
+ update employee_payroll set DEPARTMENT = 'HR' where NAME = 'PREM';
+ update employee_payroll set DEPARTMENT = 'ADMIN' where NAME = 'KALPESH';
+ update employee_payroll set DEPARTMENT = 'SALES' where NAME = 'RAHUL';
+ update employee_payroll set DEPARTMENT = 'ACCOUNTS' where NAME = 'KAVITA';
+ update employee_payroll set DEPARTMENT = 'RESERCH' where NAME = 'KALYANI';

@@ -13,3 +13,6 @@
 
  # "UC3 - CREATE EMPLOYEE PAYROLL DATA"
  insert into employee_payroll(ID,NAME,SALARY,START)values(1,'PREM',10000.00,'2018-06-01'),(2,'KALPESH',20000.00,'2019-06-01'),(3,'RAHUL',15000.00,'2017-06-01');
+
+ # "UC4 - RETRIEVE ALL EMPLOYEE PAYROLL DATA"
+ select * from employee_payroll;

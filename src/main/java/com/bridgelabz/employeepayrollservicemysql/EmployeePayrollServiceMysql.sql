@@ -33,7 +33,7 @@
  select max(SALARY)from employee_payroll where GENDER = 'F'group by GENDER;
  select GENDER, COUNT(NAME) from employee_payroll group by GENDER;
 
- # "UC8 - EXTEND EMPLOYEE PAYROLL DATA TO ADD EMPLOYEE PHONE,ADDRESS,DEPARTMENT"
+ # "UC8 - EXTEND EMPLOYEE PAYROLL TABLE TO ADD EMPLOYEE PHONE,ADDRESS,DEPARTMENT"
  alter table employee_payroll add PHONE_NUMBER int NOT NULL after GENDER;
  alter table employee_payroll add ADDRESS varchar(150) after PHONE_NUMBER;
  alter table employee_payroll add DEPARTMENT varchar(50) NOT NULL after ADDRESS;
@@ -55,3 +55,36 @@
  update employee_payroll set DEPARTMENT = 'SALES' where NAME = 'RAHUL';
  update employee_payroll set DEPARTMENT = 'ACCOUNTS' where NAME = 'KAVITA';
  update employee_payroll set DEPARTMENT = 'RESERCH' where NAME = 'KALYANI';
+
+ # "UC9 - EXTEND EMPLOYEE PAYROLL TABLE TO ADD BASIC PAY,DEDUCTIONS,TAXABLE PAY,INCOME TAX AND NET PAY"
+ alter table employee_payroll add BASIC_PAY double NOT NULL after SALARY,add DEDUCTIONS double NOT NULL after BASIC_PAY,add TAXEBLE_PAY double NOT NULL after DEDUCTIONS,add INCOME_TAX double NOT NULL after TAXEBLE_PAY,add NET_PAY double NOT NULL after INCOME_TAX;
+
+ update employee_payroll set BASIC_PAY = 10000 where NAME = 'PREM';
+ update employee_payroll set BASIC_PAY = 20000 where NAME = 'KALPESH';
+ update employee_payroll set BASIC_PAY = 15000 where NAME = 'RAHUL';
+ update employee_payroll set BASIC_PAY = 10000 where NAME = 'KAVITA';
+ update employee_payroll set BASIC_PAY = 20000 where NAME = 'KALYANI';
+
+ update employee_payroll set DEDUCTIONS = 2000 where NAME = 'PREM';
+ update employee_payroll set DEDUCTIONS = 2000 where NAME = 'KALPESH';
+ update employee_payroll set DEDUCTIONS = 2000 where NAME = 'RAHUL';
+ update employee_payroll set DEDUCTIONS = 2000 where NAME = 'KAVITA';
+ update employee_payroll set DEDUCTIONS = 2000 where NAME = 'KALYANI';
+
+ update employee_payroll set TAXEBLE_PAY = 1000 where NAME = 'PREM';
+ update employee_payroll set TAXEBLE_PAY = 1000 where NAME = 'KALPESH';
+ update employee_payroll set TAXEBLE_PAY = 1000 where NAME = 'RAHUL';
+ update employee_payroll set TAXEBLE_PAY = 1000 where NAME = 'KAVITA';
+ update employee_payroll set TAXEBLE_PAY = 1000 where NAME = 'KALYANI';
+
+ update employee_payroll set INCOME_TAX = 2000 where NAME = 'PREM';
+ update employee_payroll set INCOME_TAX = 2000 where NAME = 'KALPESH';
+ update employee_payroll set INCOME_TAX = 2000 where NAME = 'RAHUL';
+ update employee_payroll set INCOME_TAX = 2000 where NAME = 'KAVITA';
+ update employee_payroll set INCOME_TAX = 2000 where NAME = 'KALYANI';
+
+ update employee_payroll set NET_PAY = 8000 where NAME = 'PREM';
+ update employee_payroll set NET_PAY = 18000 where NAME = 'KALPESH';
+ update employee_payroll set NET_PAY = 13000 where NAME = 'RAHUL';
+ update employee_payroll set NET_PAY = 8000 where NAME = 'KAVITA';
+ update employee_payroll set NET_PAY = 18000 where NAME = 'KALYANI';

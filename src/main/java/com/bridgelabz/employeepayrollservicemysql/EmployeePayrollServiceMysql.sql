@@ -25,3 +25,10 @@
  alter table employee_payroll add GENDER char(1) NOT NULL after NAME;
  update employee_payroll set GENDER = 'M' where NAME = 'PREM' or NAME = 'KALPESH' or NAME = 'RAHUL';
  insert into employee_payroll(ID,NAME,GENDER,SALARY,START)values(4,'KAVITA','F',10000.00,'2019-06-01'),(5,'KALYANI','F',20000.00,'2019-06-01');
+
+ # "UC7 - USE DATABASE FUNCTION"
+ select sum(SALARY)from employee_payroll where GENDER = 'F'group by GENDER;
+ select avg(SALARY)from employee_payroll where GENDER = 'F'group by GENDER;
+ select min(SALARY)from employee_payroll where GENDER = 'F'group by GENDER;
+ select max(SALARY)from employee_payroll where GENDER = 'F'group by GENDER;
+ select GENDER, COUNT(NAME) from employee_payroll group by GENDER;
